@@ -16,6 +16,7 @@ public class UserController {
 
     @PostMapping
     public UserEntity createUser(@Valid @RequestBody UserEntity userEntity){
+        System.out.println("DUmbu gadu");
         return userService.createUser(userEntity);
     }
 
