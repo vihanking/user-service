@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -22,4 +23,10 @@ public class UserController {
     public UserEntity getUserByUserName(@PathVariable("userName") String userName){
         return userService.getUserByUserName(userName);
     }
+
+    @GetMapping("/getUsersByFirstName/{firstName}")
+    public List<UserEntity> getUsersByFirstName(@PathVariable("firstName") String firstName){
+        return userService.getUsersByFirstName(firstName);
+    }
+
 }

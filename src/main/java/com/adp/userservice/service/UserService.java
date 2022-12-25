@@ -5,6 +5,8 @@ import com.adp.userservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -17,5 +19,9 @@ public class UserService {
 
     public UserEntity getUserByUserName(String userName) {
         return userRepository.findById(userName).get();
+    }
+
+    public List<UserEntity> getUsersByFirstName(String firstName) {
+        return userRepository.getUsersByFirstName(firstName);
     }
 }
